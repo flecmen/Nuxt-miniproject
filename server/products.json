@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Classic Tee",
+      "description": "A comfortable classic tee for everyday use.",
+      "price": 20.99,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 2,
+      "title": "Running Shoes",
+      "description": "Lightweight running shoes with superior grip.",
+      "price": 65.0,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 3,
+      "title": "Casual Backpack",
+      "description": "Stylish and sturdy backpack for all your needs.",
+      "price": 45.5,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 4,
+      "title": "Silver Necklace",
+      "description": "Elegant silver necklace for a special occasion.",
+      "price": 125.0,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 5,
+      "title": "Ceramic Mug",
+      "description": "Beautiful ceramic mug for your favorite beverage.",
+      "price": 12.95,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 6,
+      "title": "Leather Wallet",
+      "description": "Compact leather wallet with multiple card slots.",
+      "price": 39.99,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 7,
+      "title": "Stainless Steel Watch",
+      "description": "Sleek stainless steel watch with quartz movement.",
+      "price": 200.0,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 8,
+      "title": "Yoga Mat",
+      "description": "Non-slip yoga mat for a safe practice.",
+      "price": 30.0,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 9,
+      "title": "Bluetooth Speaker",
+      "description": "Portable Bluetooth speaker with high-quality sound.",
+      "price": 75.0,
+      "image": "https://placehold.co/600x400/png"
+    },
+    {
+      "id": 10,
+      "title": "Insulated Water Bottle",
+      "description": "Double-wall insulated water bottle to keep drinks at the right temperature.",
+      "price": 25.0,
+      "image": "https://placehold.co/600x400/png"
+    }
+  ]
+}
