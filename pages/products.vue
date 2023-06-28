@@ -1,7 +1,6 @@
 <!-- Add a new page to the application (/products) that would display images, their titles, descriptions, 
   prices and images. Focus primarily on the layout, no need to worry about colors/backgrounds/etc. (You choose the design) -->
 <script setup lang="ts">
-import { Product } from '@prisma/client';
 
 const { data } = await useFetch('/api/products');
 </script>

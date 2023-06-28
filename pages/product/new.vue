@@ -1,19 +1,44 @@
 <script setup lang="ts">
-import { Product } from '@prisma/client';
-import { reactive } from 'vue';
-
 
 const product = reactive({
     title: '',
     description: '',
     price: null,
+    image: '',
 });
+
+const source_image = ref('');
 
 const submitForm = async () => {
     const response = await $fetch('/api/products', {
         method: 'POST',
         body: JSON.stringify(product),
     })
+}
+
+// Function to handle file selection and convert image to BASE64
+async function handleImageSelect(event: InputEvent): Promise<void> {
+    const file = (event.target as HTMLInputElement).files?.[0];
+        
+    if (file) {
+        const base64  = await convertToBase64(file);
+
+        // za boha nemůžu ten VueUse tady rozchodit, použil jsem normální reader a ten fungoval hned
+        //const { base64 } = useBase64(file)
+        //console.log(base64)
+
+        product.image = base64
+    }
+
+    function convertToBase64(file: File): Promise<string> {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+            resolve(reader.result as string);
+            };
+            reader.readAsDataURL(file);
+        });
+}
 }
 
 </script>
@@ -23,7 +48,6 @@ const submitForm = async () => {
         <div class="header">
             <h1>Create a product</h1>
         </div>
-
         <div class="content">
             <form>
                 <label for="title">Title</label>
@@ -36,8 +60,11 @@ const submitForm = async () => {
                 <input type="number" step="0.01" id="price" name="price" placeholder="price" v-model="product.price" min="0" required>
                 
                 <label for="image">Image</label>
+                <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" @change="handleImageSelect">
                 
                 <input type="submit" value="Create Product" @click="submitForm">
+
+
             </form>
         </div>
     </div>
