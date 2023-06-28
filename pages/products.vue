@@ -5,21 +5,40 @@
   </script>
   
   <template>
+    <div class="wrapper">
+      <div class="header">
+        <h1>Products</h1>
+      </div>
+    </div>
+
     <div class="product-grid">
-      <Product v-for="product in data" :key="product.id" :product="product" />
+      <Product 
+      v-for="product in data" 
+      :key="product.id" 
+      :product="product" />
     </div>
   </template>
   
   <style scoped>
+  .header{
+    padding: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .header h1{
+    font-size: 50px
+  }
   .product-grid {
+    padding: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
     gap: 20px;
   }
   
   @media (max-width: 768px) {
     .product-grid {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
     }
   }
   </style>

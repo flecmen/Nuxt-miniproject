@@ -9,16 +9,15 @@ defineProps<{
 
 <template>
   <div class="product">
-    <div class="image-container">
-      <img v-if="product.image" :src="product.image" alt="Product Image" class="product-image" />
-      <div v-else class="placeholder-image"></div>
-    </div>
+
+    <img v-if="product.image" :src="product.image" alt="Product Image" class="product-image" />
 
     <div class="product-info">
       <h1>{{ product.title }}</h1>
-      <p class="price">{{ product.price }}</p>
+      <p class="price">${{ product.price }}</p>
       <p class="description">{{ product.description }}</p>
     </div>
+    
   </div>
 </template>
 
@@ -26,32 +25,18 @@ defineProps<{
 .product {
   display: flex;
   padding-bottom: 10px;
-}
-
-.image-container {
-  margin-right: 20px;
-  object-fit: cover;
+  width: 100%;
 }
 
 .product-image {
-  height: 200px; /* Adjust the height as desired */
-  object-fit: cover; /* Maintain aspect ratio and cover the container */
-}
-
-.placeholder-image {
-  width: 100%;
-  height: 200px;
-  background-color: #f3f3f3;
+  margin-right: 20px;
+  width: 50%;
 }
 
 .product-info {
   display: flex;
   flex-direction: column;
-}
-
-h1 {
-  font-size: 24px;
-  margin-top: 0;
+  width: 100%;
 }
 
 .price {
@@ -61,5 +46,20 @@ h1 {
 
 .description {
   margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+  }
+
+  .product-image {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .product-info{
+    margin-top: 10px;
+  }
 }
 </style>
