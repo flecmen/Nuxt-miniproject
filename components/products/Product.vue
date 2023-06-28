@@ -32,8 +32,6 @@ defineProps<{
 .image {
   margin-right: 20px;
   width: 50%;
-  object-fit: cover;
-  height: 100%; /* Ensure the image takes up the full height of the container */
 }
 
 .image-placeholder {
@@ -65,7 +63,7 @@ defineProps<{
     flex-direction: column;
   }
 
-  .product-image {
+  .image {
     width: 100%;
     margin-right: 0;
   }
