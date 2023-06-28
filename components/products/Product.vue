@@ -10,7 +10,8 @@ defineProps<{
 <template>
   <div class="product">
 
-    <img v-if="product.image" :src="product.image" alt="Product Image" class="product-image" />
+    <img v-if="product.image" :src="product.image" alt="Product Image" class="image" />
+    <div v-else class="image-placeholder"></div>
 
     <div class="product-info">
       <h1>{{ product.title }}</h1>
@@ -28,9 +29,20 @@ defineProps<{
   width: 100%;
 }
 
-.product-image {
+.image {
   margin-right: 20px;
   width: 50%;
+  object-fit: cover;
+  height: 100%; /* Ensure the image takes up the full height of the container */
+}
+
+.image-placeholder {
+  margin-right: 20px;
+  width: 50%;
+  height: 0; /* Set initial height to 0 to create a square aspect ratio */
+  padding-bottom: 35%;
+  padding-right: 50%;
+  background-color: #131313;
 }
 
 .product-info {
