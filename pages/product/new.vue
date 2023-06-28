@@ -28,7 +28,8 @@ async function handleImageSelect(event: InputEvent): Promise<void> {
         //console.log(base64)
 
         product.image = base64
-    }
+    }else product.image = ''
+    
 
     function convertToBase64(file: File): Promise<string> {
         return new Promise((resolve) => {
@@ -61,6 +62,8 @@ async function handleImageSelect(event: InputEvent): Promise<void> {
                 
                 <label for="image">Image</label>
                 <input type="file" id="image" name="image" accept="image/png, image/jpeg, image/jpg" @change="handleImageSelect">
+
+                <img v-if="product.image" :src="product.image" alt="Product Image" class="image" />
                 
                 <input type="submit" value="Create Product" @click="submitForm">
 
